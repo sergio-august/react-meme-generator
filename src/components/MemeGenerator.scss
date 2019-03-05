@@ -1,0 +1,47 @@
+@mixin header-text {
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000;
+    color: white;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.meme {
+    &__output {
+        position: relative;
+        overflow: hidden;
+        width: 500px;
+        // max-width: 500px;
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        &__image {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            margin: 0;
+        }
+
+        &__header {
+            text-align: center;
+
+            &__top {
+                @include header-text;
+
+                width: 100%;
+                position: absolute;
+                top: 10px;
+            }
+
+            &__bottom {
+                @include header-text;
+
+                width: 100%;
+                position: absolute;
+                bottom: 0.5em;
+            }
+        }
+    }
+}
