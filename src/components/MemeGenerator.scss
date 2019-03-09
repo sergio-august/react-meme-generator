@@ -4,43 +4,107 @@
     text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000;
     color: white;
     font-weight: 700;
-    font-size: 3em;
+    font-size: 7vmin;
+}
+
+$grey: #5a5a5a;
+
+body {
+    font-family: Droid, Arial, sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    color: #222222;
+    background-color: #eeeeee;
+}
+
+.container {
+    padding: 5vmin;
+    margin: 0;
 }
 
 .meme {
-    &__output {
-        position: relative;
-        overflow: hidden;
-        width: 500px;
-        // max-width: 500px;
-        border: none;
-        padding: 0;
-        margin: 0;
+    &__control {
+        margin: 20px auto;
+        text-align: center;
 
-        &__image {
-            width: 100%;
-            height: auto;
-            padding: 0;
-            margin: 0;
-        }
+        form {
+            box-sizing: border-box;
 
-        &__header {
-            text-align: center;
-
-            &__top {
-                @include header-text;
-
-                width: 100%;
-                position: absolute;
-                top: 10px;
+            fieldset {
+                margin: 20px 0 0;
+                padding: 0.5em 0;
+                border: none;
+                border-bottom: 1px solid $grey;
             }
 
-            &__bottom {
-                @include header-text;
+            legend {
+                color: $grey;
+                text-transform: uppercase;
+                font-weight: 700;
+                text-align: center;
+            }
 
-                width: 100%;
-                position: absolute;
-                bottom: 0.5em;
+            button {
+                margin: 0.2em 0.2em 0.2em 0;
+            }
+
+            label {
+                display: inline-block;
+                font-weight: 700;
+                color: $grey;
+                min-width: 4em;
+                width: 25%;
+                text-align: left;
+            }
+
+            input[type="text"] {
+                margin: 0.3em 0;
+                background-color: inherit;
+                border: none;
+                border-bottom: 1px solid $grey;
+                width: 75%;
+            }
+        }
+    }
+
+    &__output {
+        margin: 50px auto;
+        padding: 0;
+
+        &__render {
+            border: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+
+            &__image {
+                display: block;
+                width: 90vmin;
+                padding: 0;
+                margin: 0;
+                height: auto;
+            }
+
+            &__header {
+                text-align: center;
+
+                &__top {
+                    @include header-text;
+
+                    width: auto;
+                    position: absolute;
+                    top: 0.7em;
+                }
+
+                &__bottom {
+                    @include header-text;
+
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0.5em;
+                }
             }
         }
     }

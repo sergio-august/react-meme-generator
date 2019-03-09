@@ -8,11 +8,11 @@ class MemeGenerator extends React.Component {
     constructor() {
         super()
         this.state = {
-            imgSrc: "/Third-World-Success-Kid.jpg",
+            imgSrc: "https://i.imgflip.com/265j.jpg",
             imagesLibrary: [],
-            topHeader: "WHEN YOU FINISHED",
+            topHeader: "DOESN'T OWN A COMPUTER",
             topHeaderStyle: {},
-            bottomHeader: "FIRST REACT APP!",
+            bottomHeader: "CAN STILL PLAY MINESWEEPER",
             bottomHeaderStyle: {}
         }
         this.changeHandler = this.changeHandler.bind(this)
@@ -46,7 +46,7 @@ class MemeGenerator extends React.Component {
 
     downloadImage(event) {
         event.preventDefault()
-        const node = document.getElementById("meme__output")
+        const node = document.getElementById("meme__output__render")
         domtoimage.toJpeg(node, { quality: 0.95 }).then(dataUrl => {
             const date = new Date()
             const topHeader = this.state.topHeader
@@ -68,34 +68,52 @@ class MemeGenerator extends React.Component {
             <div className="meme">
                 <div className="meme__control">
                     <form>
-                        <input
-                            type="text"
-                            name="topHeader"
-                            placeholder="Top header"
-                            value={this.state.topHeader}
-                            onChange={this.changeHandler}
-                        />
-                        <br />
-                        <input
-                            type="text"
-                            name="bottomHeader"
-                            placeholder="Bottom header"
-                            value={this.state.bottomHeader}
-                            onChange={this.changeHandler}
-                        />
-                        <br />
-                        <button onClick={this.setRandomImage}>Set random image</button>
-                        <button onClick={this.downloadImage}>Download</button>
+                        <fieldset>
+                            <legend>Image</legend>
+                            <button disabled>Select</button>
+                            <button disabled>Url</button>
+                            <button onClick={this.setRandomImage}>Random</button>&nbsp;
+                        </fieldset>
+                        <fieldset>
+                            <legend>Text</legend>
+                            <label for="topHeader">Top</label>
+                            <input
+                                type="text"
+                                id="topHeader"
+                                name="topHeader"
+                                placeholder="Top header"
+                                value={this.state.topHeader}
+                                onChange={this.changeHandler}
+                            />
+                            <br />
+                            <label for="bottomHeader">Bottom</label>
+                            <input
+                                type="text"
+                                id="bottomHeader"
+                                name="bottomHeader"
+                                placeholder="Bottom header"
+                                value={this.state.bottomHeader}
+                                onChange={this.changeHandler}
+                            />
+                            <br />
+                        </fieldset>
+                        <fieldset>
+                            <legend>Result</legend>
+                            <button disabled>Get link</button>
+                            <button onClick={this.downloadImage}>Download</button>
+                        </fieldset>
                     </form>
                 </div>
-                <div className="meme__output" id="meme__output">
-                    <img className="meme__output__image" src={this.state.imgSrc} alt="meme" />
-                    <h2 className="meme__output__header__top" style={this.state.topHeaderStyle}>
-                        {this.state.topHeader}
-                    </h2>
-                    <h2 className="meme__output__header__bottom" style={this.state.bottomHeaderStyle}>
-                        {this.state.bottomHeader}
-                    </h2>
+                <div className="meme__output">
+                    <div className="meme__output__render" id="meme__output__render">
+                        <img className="meme__output__render__image" src={this.state.imgSrc} alt="meme" />
+                        <p className="meme__output__render__header__top" style={this.state.topHeaderStyle}>
+                            {this.state.topHeader}
+                        </p>
+                        <p className="meme__output__render__header__bottom" style={this.state.bottomHeaderStyle}>
+                            {this.state.bottomHeader}
+                        </p>
+                    </div>
                 </div>
             </div>
         )
