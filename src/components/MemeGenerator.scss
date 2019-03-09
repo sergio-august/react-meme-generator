@@ -69,10 +69,12 @@ body {
     }
 
     &__output {
+        width: 90vmin;
         margin: 50px auto;
         padding: 0;
 
         &__render {
+            width: 90vmin;
             border: none;
             padding: 0;
             margin: 0;
