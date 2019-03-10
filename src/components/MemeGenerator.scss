@@ -1,10 +1,9 @@
-@mixin header-text {
+@mixin shadowed-text {
     margin: 0;
     padding: 0;
     text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000, 2px 2px 5px #000;
     color: white;
     font-weight: 700;
-    font-size: 7vmin;
 }
 
 $grey: #5a5a5a;
@@ -93,16 +92,18 @@ body {
                 text-align: center;
 
                 &__top {
-                    @include header-text;
+                    @include shadowed-text;
 
-                    width: auto;
+                    font-size: 7vmin;
+                    width: 100%;
                     position: absolute;
                     top: 0.7em;
                 }
 
                 &__bottom {
-                    @include header-text;
+                    @include shadowed-text;
 
+                    font-size: 7vmin;
                     width: 100%;
                     position: absolute;
                     bottom: 0.5em;
@@ -111,3 +112,5 @@ body {
         }
     }
 }
+
+@import "./MemeGeneratorMedia.scss";
