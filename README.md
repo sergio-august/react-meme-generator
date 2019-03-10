@@ -1,3 +1,32 @@
+![Image alt text](https://i.imgur.com/vKIDpv7.png)
+
+## Meme generator
+
+http://memegen.surge.sh
+
+Project for learning Bootstrap library
+
+- React
+- SCSS
+
+### Resources
+
+- https://scrimba.com/g/glearnreact
+
+### Todo
+
+- Add desktop layout
+- Implement upload to imgur
+- Test on iPhone
+- Test on Internet Explorer 11+
+- Test on MacOS Safari
+- Add about page, using Router
+- Add russian language
+- Rewrite with UI Framework
+
+
+## Default create-react-app readme below
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
